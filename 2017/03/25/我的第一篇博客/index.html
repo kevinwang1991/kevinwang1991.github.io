@@ -96,7 +96,7 @@
 <meta property="og:description" content="今天通过GitHub + Node.js + HEXO + Next(主题)来建立了一个属于自己的专属博客网站。下面就来介绍一下我的各种弯路历程吧：
 首先要安装HEXO 的支持框架——Node.js ，以及版本提交工具GitNode.js 安装  关于安装Node.js，在这里不得不好好吐槽一下，很多人写的建议是直接到官网去下载。本人就傻乎乎的真的跑到官网去下载了，奈何在无数次的网路连接错误后，终">
 <meta property="og:image" content="http://image.liuxianan.com/201608/20160818_143914_495_9084.png?_=5800863">
-<meta property="og:updated_time" content="2017-03-25T10:33:42.000Z">
+<meta property="og:updated_time" content="2017-03-25T10:35:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC - 构建属于自己的专属博客">
 <meta name="twitter:description" content="今天通过GitHub + Node.js + HEXO + Next(主题)来建立了一个属于自己的专属博客网站。下面就来介绍一下我的各种弯路历程吧：
@@ -340,10 +340,10 @@
 <h1 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a><em>配置Github</em></h1><p>首先你的注册呀，要不然不让你用</p>
 <p>然后创建一个库，名字必须得是your_user_name.github.io（这个为什么这样写本人已经研究过了，但是不给你分享哦）。</p>
 <p>然后在你的本地的建立的博客的文件夹里面找到vim_config.yml里面进行配置:</p>
-<p>`&lt;deploy:</p>
-<p> type: git</p>
+<pre><code>deploy:
+</code></pre><p> type: git</p>
 <p> repo: <a href="https://github.com/******/******.github.io.git" target="_blank" rel="external">https://github.com/******/******.github.io.git</a></p>
-<p> branch: master&gt;`</p>
+<p> branch: master</p>
 <p>这里的<strong>**</strong>☞的就是your_user_name。</p>
 <p>然后执行命令：<br><code>&lt; npm install hexo-deployer-git --save &gt;</code></p>
 <h1 id="SSH-keys"><a href="#SSH-keys" class="headerlink" title="SSH keys"></a><em>SSH keys</em></h1><p><code>&lt; cd ~/. ssh &gt;</code> #检查本机已经存在的ssh密钥</p>

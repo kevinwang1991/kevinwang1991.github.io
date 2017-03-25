@@ -341,10 +341,10 @@
 <h1 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a><em>配置Github</em></h1><p>首先你的注册呀，要不然不让你用</p>
 <p>然后创建一个库，名字必须得是your_user_name.github.io（这个为什么这样写本人已经研究过了，但是不给你分享哦）。</p>
 <p>然后在你的本地的建立的博客的文件夹里面找到vim_config.yml里面进行配置:</p>
-<p>`&lt;deploy:</p>
-<p> type: git</p>
+<pre><code>deploy:
+</code></pre><p> type: git</p>
 <p> repo: <a href="https://github.com/******/******.github.io.git" target="_blank" rel="external">https://github.com/******/******.github.io.git</a></p>
-<p> branch: master&gt;`</p>
+<p> branch: master</p>
 <p>这里的<strong>**</strong>☞的就是your_user_name。</p>
 <p>然后执行命令：<br><code>&lt; npm install hexo-deployer-git --save &gt;</code></p>
 <h1 id="SSH-keys"><a href="#SSH-keys" class="headerlink" title="SSH keys"></a><em>SSH keys</em></h1><p><code>&lt; cd ~/. ssh &gt;</code> #检查本机已经存在的ssh密钥</p>
