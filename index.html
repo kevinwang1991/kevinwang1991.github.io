@@ -362,6 +362,20 @@
 <li>在进行随机检索的时候LinkedList的执行效率比ArrayList和Vector要低。</li>
 <li>在空间开销方面，Vector和ArrayList比，Vector比ArrayList要大，但是都可以通过方法控制大小。LinkedList的开销主要在分配一个内部的Entry对象。</li>
 </ul>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>HashSet继承了Java.util.set接口，具有以下特点：</p>
+<ul>
+<li>不允许出现重复的元素</li>
+<li>不能保证元素的顺序</li>
+<li>允许包含为null的元素，但是最多只能有一个null的元素</li>
+</ul>
+<h2 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h2><p>TreeSet是可以实现排序功能的集合，它可以使对象在加入集合的过程中按照某种比较规则进行排序之后再添加。</p>
+<p>那么TreeSet是怎么进行排序呢？TreeSet支持两种排序方式：</p>
+<ul>
+<li>自然排序</li>
+<li>客户化排序</li>
+</ul>
+<p>说道自然排序就得提到JDK中的comapreTo（Object o）方法，改方法是继承了Comparable接口的类都可以实现的方法。（比如Integer，Double，String等）。该方法返回整数类型，对于表达式x.compareTo(y)，如果返回0则表示x和y相同，如果返回值大于0，则表示x大于y，如果小于0，则表示x小于y。</p>
+<p>客户化排序：<br>java.util.Comparator接口用于指定具体的排序方式，具体的语法是compare(Object obj1,Object obj2)，该表达式返回的值得意义大小跟x.compareTo(y)是一样的。</p>
 
           
         
