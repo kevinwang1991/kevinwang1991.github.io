@@ -97,7 +97,7 @@
 所以本人就写下了这么一个小清新的树状图123456789graph TDCollection--&amp;gt;ListCollection--&amp;gt;SetList--&amp;gt;LinkedListLi">
 <meta property="og:image" content="http://img.blog.csdn.net/20160725191058505?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://img.blog.csdn.net/20160725192619668?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2017-03-28T14:42:17.000Z">
+<meta property="og:updated_time" content="2017-03-30T13:09:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 数据结构浅析">
 <meta name="twitter:description" content="Java.util中包含三个重要的接口以及特点：List（列表），Set（保证元素的唯一），Map（key-value键值对，保证key的唯一性），下面的图片是从CSDN网站下载的图片，是不是感觉超级复杂
@@ -402,7 +402,9 @@
 <ul>
 <li>由于采用的红黑二叉树的排序方式，因此在存入和取出元素的效率都比HashMap要低。</li>
 </ul>
-<h2 id="ConcurrenctHashMap"><a href="#ConcurrenctHashMap" class="headerlink" title="ConcurrenctHashMap"></a>ConcurrenctHashMap</h2>
+<h2 id="ConcurrenctHashMap"><a href="#ConcurrenctHashMap" class="headerlink" title="ConcurrenctHashMap"></a>ConcurrenctHashMap</h2><p>ConcurrenctHashMap是一个线程安全的HashMap，它的主要功能是提供了一组和HashTable功能相同的但是线程安全的方发ConcurrenctHashMap能够在读取数的时候不加🔐，并且由于内部结构的特殊性能够将锁的粒度尽量的缩小，从而不对整个map进行加锁。<br>ConcurrenctHashMap的内部是由多个叫做Segment的结构组成的（默认是16个），每个Segment其实就相当于一个HashTable，因此ConcurrentHashMap定位一个元素的过程需要进行两次Hash操作，第一次Hash定位到Segment，第二次Hash定位到元素所在的链表的头部，因此，这一种结构的带来的副作用是Hash的过程要比普通的HashMap要长，但是带来的好处是写操作的时候可以只对元素所在的Segment进行加锁即可，不会影响到其他的Segment，这样，在最理想的情况下，ConcurrentHashMap可以最高同时支持Segment数量大小的写操作（刚好这些写操作都非常平均地分布在所有的Segment上），所以，通过这一种结构，ConcurrentHashMap的并发能力可以大大的提高。</p>
+<p>ConcurrentHashMap在get方法上没有加锁，但是在put和remove的时候加锁了，但是只在Segment级别加锁。</p>
+
       
     </div>
 
